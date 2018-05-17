@@ -1,0 +1,24 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: root
+  pool: 5
+
+
+development:
+  <<: *default
+  host: 127.0.0.1
+  database: uisport_development_new
+
+test:
+  <<: *default
+  database: uisport_test
+
+staging:
+  <<: *default
+  database: uisport_staging
+
+production:
+  <<: *default
+  database: uisport_production
