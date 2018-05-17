@@ -16,8 +16,8 @@ set :use_sudo, false
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :tmp_dir, "/home/uipost"
-set :deploy_to, "/home/uipost"
+set :tmp_dir, "/home/uispost"
+set :deploy_to, "/home/uispost"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
