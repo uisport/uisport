@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 # If the environment differs from the stage name
-set :application, 'uipost'
+set :application, 'uisport'
 
 set :repo_url, 'git@github.com:uisport/uisport.git'
 set :branch, "master"
@@ -16,8 +16,8 @@ set :use_sudo, false
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :tmp_dir, "/home/uispost"
-set :deploy_to, "/home/uispost"
+set :tmp_dir, "/home/uisport"
+set :deploy_to, "/home/uisport"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
