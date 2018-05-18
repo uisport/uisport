@@ -106,17 +106,32 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = mail_delivery_method
 
-  if mail_delivery_method == :smtp
-    ActionMailer::Base.smtp_settings = {
-      :address              => APP_CONFIG.smtp_email_address,
-      :port                 => APP_CONFIG.smtp_email_port,
-      :domain               => APP_CONFIG.smtp_email_domain,
-      :user_name            => APP_CONFIG.smtp_email_user_name,
-      :password             => APP_CONFIG.smtp_email_password,
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
-    }
-  end
+  # if mail_delivery_method == :smtp
+  #   ActionMailer::Base.smtp_settings = {
+  #     :address              => APP_CONFIG.smtp_email_address,
+  #     :port                 => APP_CONFIG.smtp_email_port,
+  #     :domain               => APP_CONFIG.smtp_email_domain,
+  #     :user_name            => APP_CONFIG.smtp_email_user_name,
+  #     :password             => APP_CONFIG.smtp_email_password,
+  #     :authentication       => 'plain',
+  #     :enable_starttls_auto => true
+  #   }
+  # end
+
+  config.action_mailer.default_url_options = { :host =>"http://82.223.71.63"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address => "imap.1and1.es",
+    :port => 587,
+    :authentication => :plain,
+    :domain => 'gmail.com',
+    :user_name => 'comunidad@uisport.com',
+    :password => 'Servidor2345;',
+    :enable_starttls_auto => true
+  }
+
 
   # Sendmail is used for some mails (e.g. Newsletter) so configure it even when smtp is the main method
   ActionMailer::Base.sendmail_settings = {

@@ -69,20 +69,35 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  if APP_CONFIG.mail_delivery_method == "sendmail"
-    ActionMailer::Base.delivery_method = :sendmail
-  elsif APP_CONFIG.mail_delivery_method == "smtp"
-    # Enable sending mail from localhost
-    ActionMailer::Base.smtp_settings = {
-      :address              => APP_CONFIG.smtp_email_address,
-      :port                 => APP_CONFIG.smtp_email_port,
-      :domain               => APP_CONFIG.smtp_email_domain || 'localhost',
-      :user_name            => APP_CONFIG.smtp_email_user_name,
-      :password             => APP_CONFIG.smtp_email_password,
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
-    }
-  end
+  # if APP_CONFIG.mail_delivery_method == "sendmail"
+  #   ActionMailer::Base.delivery_method = :sendmail
+  # elsif APP_CONFIG.mail_delivery_method == "smtp"
+  #   # Enable sending mail from localhost
+  #   ActionMailer::Base.smtp_settings = {
+  #     :address              => APP_CONFIG.smtp_email_address,
+  #     :port                 => APP_CONFIG.smtp_email_port,
+  #     :domain               => APP_CONFIG.smtp_email_domain || 'localhost',
+  #     :user_name            => APP_CONFIG.smtp_email_user_name,
+  #     :password             => APP_CONFIG.smtp_email_password,
+  #     :authentication       => 'plain',
+  #     :enable_starttls_auto => true
+  #   }
+  # end
+
+  config.action_mailer.default_url_options = { :host =>"http://localhost:3000"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :address => "imap.1and1.es",
+    :port => 587,
+    :authentication => :plain,
+    :domain => 'uisport.com',
+    :user_name => 'comunidad@uisport.com',
+    :password => 'Servidor2345;',
+    :enable_starttls_auto => true
+  }
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

@@ -183,3 +183,6 @@ gem 'intercom'
 gem 'twitter_cldr'
 gem 'memoist'
 gem 'biz'
+
+#delayed job
+gem 'daemons'
