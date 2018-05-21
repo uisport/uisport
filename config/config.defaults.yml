@@ -176,11 +176,12 @@ default: &default_settings
   smtp_email_address: "smtp.gmail.com"
   smtp_email_port: 587
   smtp_email_user_name: "yuvasoftest@gmail.com"
-  smtp_email_password: "yuva123456789"
+  smtp_email_password: "yuva12345678"
   # smtp_email_domain: "localhost"
   smtp_email_domain: "gmail.com"
 
 
+  
   # This will be the from field in the mails sent from Sharetribe
   sharetribe_mail_from_address: "yuvasoftest@gmail.com"
 
@@ -454,9 +455,10 @@ default: &default_settings
 
   # Key pattern to ensure production keys
   stripe_private_key_pattern: "\\Ask_test_.{24}\\z"
-  stripe_publishable_key_pattern: "\\Ask_test_.{24}\\z"
+  stripe_publishable_key_pattern: "\\Apk_test_.{24}\\z"
+
   # Stripe allows to hold funds up to 90 days
-  # (85 and not 90 or 89 as a security, also because timezones are not
+  # (85 and not 90 or 89 as a security, also because timezones are not 
   # managed and transactions are automatically marked as completed)
   stripe_max_booking_date: 85
 
@@ -464,7 +466,7 @@ default: &default_settings
   # Sharetribe supports only managed accounts, and two payment modes:
   #
   # :separate    - Separate charges and transfers, payment goes to admin account, with delayed transfer to seller
-  # :destination - Destination charges, payment goes to admin account, with instant partial transfer to seller
+  # :destination - Destination charges, payment goes to admin account, with instant partial transfer to seller  
   #
   # By default :destination mode is used
   stripe_charges_mode: :destination
@@ -475,29 +477,31 @@ default: &default_settings
 production: &production_settings
   <<: *default_settings
 
+  # domain: "82.223.71.63"
+
+
   eager_load: true
+
+  log_level: INFO
+  stripe_private_key_pattern: "\\Ask_live_.{24}\\z"
+  stripe_publishable_key_pattern: "\\Apk_live_.{24}\\z"
 
 staging:
   <<: *production_settings
   # By default staging has same settings as production, but those can be overridden here.
 
   log_level: INFO
-  stripe_private_key_pattern: "\\Ask_test_.{24}\\z"
-  stripe_publishable_key_pattern: "\\Ask_test_.{24}\\z"
+  stripe_private_key_pattern: "\\Ask_(test|live)_.{24}\\z"
+  stripe_publishable_key_pattern: "\\Apk_(test|live)_.{24}\\z"
 
 development:
   <<: *default_settings
 
-  s3_bucket_name:
-  aws_access_key_id: "\\Ask_test_.{24}\\z"
-  aws_secret_access_key: "\\Ask_test_.{24}\\z"
+  # domain: "lvh.me:3000"
+
 
   # Usually it's easier to run development without SSL
   always_use_ssl: false
-
-
-  # stripe setting
-  eager_load: true
 
   # Skip email confirmation
   skip_email_confirmation: true
@@ -505,7 +509,7 @@ development:
   secret_key_base: "fd1af50b59b5e27776941b3205f92aca0f704c2252225cf93e3d97ae53f4774d25736cbdb19c1580839a2f68e15009209227e966003f53932c1bcc5d65616948"
 
   # Used to encrypt Stripe api keys
-  app_encryption_key:
+  app_encryption_key: "2617463e32b65ec6645b3cb661f9686f2ab608c18ac930ee1295a1c1170504ed"
 
   log_level: DEBUG
 
@@ -525,6 +529,7 @@ test:
   # The domain should be set to lvh.me:9887 (which redirects to localhost)
   # to be able to run the tests with subdomains.
   domain: lvh.me:9887
+
   # NOTE: If you are running tests without internet connection, you might need to modify your hosts file.
   # And add lines: (where there is one tab separating the ip and the domain)
   #127.0.0.1       lvh.me
@@ -549,7 +554,9 @@ test:
 
   # don't use S3 in tests. (this is the default to avoid
   # anyone losing money for paying for the hosting of test images)
-
+  s3_bucket_name:
+  aws_access_key_id:
+  aws_secret_access_key:
 
   sns_notification_token: test_token
 
@@ -558,7 +565,7 @@ test:
 
   secret_key_base: "8fb582997a5e3ba2efb57c020dd01aa81647674dbb1aee6efcf30d75ec442e3a48832379e1ebaae2801782075efbf02ebed797a1df3f2b3ad87ec3faf37ccc64"
   # Used to encrypt Stripe api keys
-  app_encryption_key:
+  app_encryption_key: TESTAPISECRET
 
   log_level: DEBUG
 
@@ -567,6 +574,6 @@ test:
 
   # Stripe tests use for now real api calls,
   # Add your test keys to run features/stripe/stripe.feature
-  feature_stripe_publishable_key: 
-  feature_stripe_private_key: 
+  feature_stripe_publishable_key: pk_test_123456789012345678901234
+  feature_stripe_private_key: sk_test_123456789012345678901234
 
