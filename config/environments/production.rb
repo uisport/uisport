@@ -11,6 +11,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  #SSL
+  config.force_ssl = true
+
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
@@ -84,7 +87,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
 
   # Don't fallback to assets pipeline
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -118,21 +121,7 @@ Rails.application.configure do
   #   }
   # end
 
-  # config.action_mailer.default_url_options = { :host =>"http://82.223.71.63"}
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.raise_delivery_errors = true
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "imap.1and1.es",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :domain => 'gmail.com',
-  #   :user_name => 'comunidad@uisport.com',
-  #   :password => 'Servidor2345;',
-  #   :enable_starttls_auto => true
-  # }
-
-  config.action_mailer.default_url_options = { :host =>"http://localhost:3000"}
+  config.action_mailer.default_url_options = { :host =>"http://82.223.71.63"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -142,7 +131,7 @@ Rails.application.configure do
     :authentication => :plain,
     :domain => 'gmail.com',
     :user_name => 'yuvasoftest@gmail.com',
-    :password => 'yuva12345678',
+    :password => 'yuva123456789',
     :enable_starttls_auto => true
   }
 

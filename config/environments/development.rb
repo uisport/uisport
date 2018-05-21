@@ -84,21 +84,6 @@ Rails.application.configure do
   #   }
   # end
 
-  # config.action_mailer.default_url_options = { :host =>"http://localhost:3000"}
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.raise_delivery_errors = true
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "imap.1and1.es",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :domain => 'uisport.com',
-  #   :user_name => 'comunidad@uisport.com',
-  #   :password => 'Servidor2345;',
-  #   :enable_starttls_auto => true
-  # }
-
-
   config.action_mailer.default_url_options = { :host =>"http://localhost:3000"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -109,10 +94,9 @@ Rails.application.configure do
     :authentication => :plain,
     :domain => 'gmail.com',
     :user_name => 'yuvasoftest@gmail.com',
-    :password => 'yuva12345678',
+    :password => 'yuva123456789',
     :enable_starttls_auto => true
   }
-
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
