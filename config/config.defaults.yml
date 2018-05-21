@@ -176,7 +176,7 @@ default: &default_settings
   smtp_email_address: "smtp.gmail.com"
   smtp_email_port: 587
   smtp_email_user_name: "yuvasoftest@gmail.com"
-  smtp_email_password: "yuva12345678"
+  smtp_email_password: "yuva123456789"
   # smtp_email_domain: "localhost"
   smtp_email_domain: "gmail.com"
 
