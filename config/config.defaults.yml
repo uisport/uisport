@@ -176,19 +176,21 @@ default: &default_settings
   # smtp_email_port: 587
   # smtp_email_user_name: "<YOUR_GMAIL_USERNAME>@gmail.com"
   # smtp_email_password: "<YOUR_GMAIL_PASSWORD>"
-  # smtp_email_domain: "localhost"
+  mail_delivery_method: smtp
 
-  smtp_email_address: "imap.1and1.es"
+  smtp_email_address: "smtp.gmail.com"
   smtp_email_port: 587
-  smtp_email_user_name: "comunidad@uisport.com"
-  smtp_email_password: "Servidor2345;"
-  smtp_email_domain: "uisport.com"
+  smtp_email_user_name: "yuvasoftest@gmail.com"
+  smtp_email_password: "yuva12345678"
+  # smtp_email_domain: "localhost"
+  smtp_email_domain: "gmail.com"
+
 
   # This will be the from field in the mails sent from Sharetribe
-  sharetribe_mail_from_address: "info@uisport.com"
+  sharetribe_mail_from_address: "yuvasoftest@gmail.com"
 
   # The address where the notifications of feedbacks from Sharetribe UI are sent
-  feedback_mailer_recipients:  'info@uisport.com'
+  feedback_mailer_recipients:  'yuvasoftest@gmail.com'
 
   grid_listings_limit: 24
   map_listings_limit: 150
@@ -289,8 +291,8 @@ default: &default_settings
   original_image_height: 1600
 
   # Email addresses for sales & support. Will be shown to the administrator.
-  sales_email: info@uisport.com
-  support_email: info@uisport.com
+  sales_email: 'yuvasoftest@gmail.com'
+  support_email: 'yuvasoftest@gmail.com'
 
   # Knowledge base
   knowledge_base_url: http://www.example.com/knowledgebase
@@ -481,6 +483,7 @@ production: &production_settings
 
   domain: "82.223.71.63"
 
+
   eager_load: true
 
   log_level: INFO
@@ -499,6 +502,8 @@ development:
   <<: *default_settings
 
   domain: "lvh.me:3000"
+
+
 
   # Usually it's easier to run development without SSL
   always_use_ssl: false
@@ -529,6 +534,7 @@ test:
   # The domain should be set to lvh.me:9887 (which redirects to localhost)
   # to be able to run the tests with subdomains.
   domain: lvh.me:9887
+
   # NOTE: If you are running tests without internet connection, you might need to modify your hosts file.
   # And add lines: (where there is one tab separating the ip and the domain)
   #127.0.0.1       lvh.me
