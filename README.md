@@ -71,9 +71,8 @@ Before you get started, the following needs to be installed:
 1.  Get the code. Clone this git repository and check out the latest release:
 
     ```bash
-    git clone git://github.com/sharetribe/sharetribe.git
-    cd sharetribe
-    git checkout latest
+    git clone git@github.com:uisport/uisport.git
+    cd uisport
     ```
 
 1.  Install the required gems by running the following command in the project root directory:
