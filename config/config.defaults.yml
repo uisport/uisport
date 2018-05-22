@@ -5,7 +5,7 @@ default: &default_settings
   # The community subdomains will be added to this top domain.
   # NOTE: Do not include http(s) here, or subdomains, just the top level domain, like "sharetribe.com" for example
 
-  domain: APP_CONFIG.domain
+  # domain: APP_CONFIG.domain
 
   # A comma separated string of trusted proxies. If you host your
   # application behind proxies this configuration allows
@@ -173,20 +173,20 @@ default: &default_settings
   # For the domain part you can enter HELO domain, if needed. Google for more info. :)
   mail_delivery_method: smtp
 
-  smtp_email_address: "smtp.gmail.com"
+  smtp_email_address: "smtp.1and1.es"
   smtp_email_port: 587
-  smtp_email_user_name: "yuvasoftest@gmail.com"
-  smtp_email_password: "yuva123456789"
+  smtp_email_user_name: "comunidad@uisport.com"
+  smtp_email_password: "Servidor2345;"
   # smtp_email_domain: "localhost"
-  smtp_email_domain: "gmail.com"
+  smtp_email_domain: "webmail.1and1.es"
 
 
   
   # This will be the from field in the mails sent from Sharetribe
-  sharetribe_mail_from_address: "yuvasoftest@gmail.com"
+  sharetribe_mail_from_address: "comunidad@uisport.com"
 
   # The address where the notifications of feedbacks from Sharetribe UI are sent
-  feedback_mailer_recipients:  'yuvasoftest@gmail.com'
+  feedback_mailer_recipients:  'comunidad@uisport.com'
 
   grid_listings_limit: 24
   map_listings_limit: 150
@@ -287,8 +287,8 @@ default: &default_settings
   original_image_height: 1600
 
   # Email addresses for sales & support. Will be shown to the administrator.
-  sales_email: 'yuvasoftest@gmail.com'
-  support_email: 'yuvasoftest@gmail.com'
+  sales_email: 'comunidad@uisport.com'
+  support_email: 'comunidad@uisport.com'
 
   # Knowledge base
   knowledge_base_url: http://www.example.com/knowledgebase
@@ -477,7 +477,7 @@ default: &default_settings
 production: &production_settings
   <<: *default_settings
 
-  # domain: "82.223.71.63"
+  domain: "82.223.71.63"
 
 
   eager_load: true
@@ -497,7 +497,7 @@ staging:
 development:
   <<: *default_settings
 
-  # domain: "lvh.me:3000"
+  domain: "lvh.me:3000"
 
 
   # Usually it's easier to run development without SSL

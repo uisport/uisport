@@ -126,13 +126,12 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
+    :address => "smtp.1and1.es",
     :port => 587,
     :authentication => :plain,
-    :domain => 'gmail.com',
-    :user_name => 'yuvasoftest@gmail.com',
-    :password => 'yuva123456789',
-    :enable_starttls_auto => true
+    :domain => 'webmail.1and1.es',
+    :user_name => 'comunidad@uisport.com',
+    :password => 'Servidor2345;'
   }
 
 
