@@ -477,7 +477,7 @@ default: &default_settings
 production: &production_settings
   <<: *default_settings
 
-  domain: "82.223.71.63"
+  domain: "uisport.com"
 
 
   eager_load: true
