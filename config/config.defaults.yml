@@ -176,7 +176,7 @@ default: &default_settings
   smtp_email_address: "smtp.1and1.es"
   smtp_email_port: 587
   smtp_email_user_name: "comunidad@uisport.com"
-  smtp_email_password: "Servidor2345;"
+  smtp_email_password: "Servidores@2345"
   # smtp_email_domain: "localhost"
   smtp_email_domain: "webmail.1and1.es"
 

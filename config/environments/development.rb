@@ -117,7 +117,7 @@ Rails.application.configure do
     :authentication => :plain,
     :domain => 'webmail.1and1.es',
     :user_name => 'comunidad@uisport.com',
-    :password => 'Servidor2345;'
+    :password => 'Servidores@2345'
     # :enable_starttls_auto => true
   }
   # Print deprecation notices to the Rails logger.
