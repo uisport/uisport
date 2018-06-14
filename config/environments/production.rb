@@ -131,7 +131,7 @@ Rails.application.configure do
     :authentication => :plain,
     :domain => 'webmail.1and1.es',
     :user_name => 'comunidad@uisport.com',
-    :password => 'Servidores@2345'
+    :password => 'Servidor2345;!'
   }
 
 

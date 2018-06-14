@@ -39,6 +39,7 @@ class Category < ApplicationRecord
   before_save :uniq_url
   before_destroy :can_be_destroyed?
 
+  after_save ThinkingSphinx::RealTime.callback_for(:category)
 
   def translation_attributes=(attributes)
     build_attrs = attributes.map { |locale, values| { locale: locale, values: values } }
