@@ -24,8 +24,8 @@
 
 class Invitation < ApplicationRecord
 
-  INVITATION_LIMIT = 10
-  INVITE_ONLY_INVITATION_LIMIT = 50
+  INVITATION_LIMIT = 500
+  INVITE_ONLY_INVITATION_LIMIT = 1000
 
   has_many :community_memberships #One invitation can result many users joining.
   belongs_to :community
